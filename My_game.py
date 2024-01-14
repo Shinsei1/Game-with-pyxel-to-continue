@@ -1,11 +1,8 @@
-# Créé par Waîl Yeager, le 14/01/2024 en Python 3.7
-# Créé par Waîl Yeager, le 11/01/2024 en Python 3.7
 import pyxel
 import random
 import time as t
 
 """Gameplay: Fleches : 4 directions , espace : tirs basiques , Bouton X : Laser (attention le laser n'affecte pas les bonus , echap: abandonner , Q : quitter le jeu , C : charge , V : bombe  """
-#ralentir le temps
 
 class Jeu:
     def __init__(self):
@@ -44,7 +41,6 @@ class Jeu:
 
         self.nucleaire = 1
 
-        #self.bouclier = 2
         self.temps = 2
         self.est_actif = False
 
@@ -63,7 +59,7 @@ class Jeu:
         if pyxel.btn(pyxel.KEY_UP) and self.vaisseau_y > 0:
             self.vaisseau_y -= 6
 
-    """ bouclier """
+    """ bouclier (skip this part for the moment)"""
     """
     def boucliers(self):
         if pyxel.btn(pyxel.KEY_B) and self.bouclier > 0:
@@ -81,14 +77,6 @@ class Jeu:
 
                 i += 1
 
-    """
-    def wait(self):
-        i = 0
-        while i < 100000:
-            self.deplacement()
-            i += 1
-            time.sleep(0.001)
-    """
     def tps(self):
         if pyxel.btn(pyxel.KEY_B) and self.temps > 0:
             self.est_actif = True
